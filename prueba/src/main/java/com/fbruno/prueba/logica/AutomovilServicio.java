@@ -23,6 +23,7 @@ public class AutomovilServicio {
 	}
 
 	public Automovil guardar(Automovil p) {
+		p.setPrecioFinal(p.getPrecio());
 		return repositorio.save(p);
 	}
 	

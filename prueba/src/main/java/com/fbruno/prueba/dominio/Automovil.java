@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
@@ -22,6 +24,7 @@ public class Automovil {
     @JoinTable(name = "automovil_opcional", joinColumns = 
     @JoinColumn(name = "automovil_id", referencedColumnName = "id"), inverseJoinColumns = 
     @JoinColumn(name = "opcional_id", referencedColumnName = "id"))
+    
   	private Set<Opcional> opcionales;
     
 	public Integer getId() {

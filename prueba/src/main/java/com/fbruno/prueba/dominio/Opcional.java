@@ -2,7 +2,7 @@ package com.fbruno.prueba.dominio;
 
 
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import lombok.Data;
 
@@ -26,14 +28,14 @@ public class Opcional {
 	private double precio;
     
     @ManyToMany(mappedBy = "opcionales")
-	private Set<Automovil> automoviles;
-	   
-	public Set<Automovil> getAutomoviles() {
+	private List<Automovil> automoviles;
+	
+	public List<Automovil> getAutomoviles() {
 		return automoviles;
 	}
 
 
-	public void setAutomoviles(Set<Automovil> automoviles) {
+	public void setAutomoviles(List<Automovil> automoviles) {
 		this.automoviles = automoviles;
 	}
 
