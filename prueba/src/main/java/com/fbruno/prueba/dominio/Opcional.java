@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import lombok.Data;
@@ -30,6 +31,7 @@ public class Opcional {
     @ManyToMany(mappedBy = "opcionales")
 	private List<Automovil> automoviles;
 	
+	@JsonIgnore
 	public List<Automovil> getAutomoviles() {
 		return automoviles;
 	}

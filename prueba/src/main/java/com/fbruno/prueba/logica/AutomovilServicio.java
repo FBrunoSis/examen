@@ -33,8 +33,9 @@ public class AutomovilServicio {
 	
 	public Automovil asignarOpcional(Integer i, Integer o) {
 		double total = 0;
-		Automovil auto = repositorio.getById(i);
-		Opcional opcional = repositorioOpcional.getById(o);
+		Automovil auto = repositorio.findById(i).get();
+		//Opcional opcional = repositorioOpcional.getById(o);
+		Opcional opcional = repositorioOpcional.findById(o).get();
 		total = auto.getPrecioFinal()+opcional.getPrecio();
 		auto.setPrecioFinal(total);
 		auto.getOpcionales().add(opcional);
